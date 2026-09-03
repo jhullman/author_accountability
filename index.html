@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reviewer Commitment to Authorial Accountability</title>
+<meta name="description" content="A commitment by peer reviewers to decline review invitations when a submitted paper's prose strongly suggests it is substantially AI-generated.">
+<meta property="og:title" content="Reviewer Commitment to Authorial Accountability">
+<meta property="og:description" content="A commitment by peer reviewers to decline review invitations when a submitted paper's prose strongly suggests it is substantially AI-generated.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jhullman.github.io/author_accountability/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://jhullman.github.io/author_accountability/">
+<style>
+  :root {
+    --page:    #ffffff;
+    --ink:     #131313;
+    --ink-2:   #3d3d3d;
+    --rule:    #cfcfcf;
+    --blue:      #1d4e89;
+    --blue-wash: #eaf0f8;
+    --blue-text: #ffffff;
+    --measure: 41rem;
+
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
+             Charter, Georgia, "Times New Roman", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page:  #121212;
+      --ink:   #e8e6e2;
+      --ink-2: #b6b3ae;
+      --rule:  #3a3a3a;
+      --blue:      #8ab2e0;
+      --blue-wash: #16202c;
+      --blue-text: #0e1620;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 3.25rem 1.5rem 5rem;
+  }
+
+  /* ---------- masthead ---------- */
+
+  h1 {
+    font-size: clamp(1.95rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    margin: 0 0 1.15rem;
+    text-wrap: balance;
+  }
+
+  .standfirst {
+    font-size: 1.16rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 32em;
+  }
+
+  .masthead {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--blue);
+    margin-bottom: 2.75rem;
+  }
+
+  /* ---------- statement: book setting, first-line indents ---------- */
+
+  .statement p {
+    margin: 0;
+    text-indent: 1.6em;
+  }
+
+  .statement p.opening,
+  .statement p.pull + p {
+    text-indent: 0;
+  }
+
+  .pull {
+    text-indent: 0 !important;
+    margin: 2.25rem 0 !important;
+    padding-left: 1.4rem;
+    border-left: 3px solid var(--blue);
+    font-size: 1.16rem;
+    line-height: 1.5;
+  }
+
+  /* ---------- sections ---------- */
+
+  section { margin-top: 3.25rem; }
+  section.set-apart { margin-top: 4.25rem; }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.09em;
+    color: var(--blue);
+    margin: 0 0 1rem;
+  }
+
+  .lede { margin: 0 0 1.15rem; color: var(--ink-2); }
+
+  /* ---------- suggested response ---------- */
+
+  .response {
+    background: var(--blue-wash);
+    border: 1px solid var(--blue);
+    padding: 1.6rem 1.7rem 1.5rem;
+  }
+
+  .response blockquote { margin: 0; }
+  .response blockquote p { margin: 0; }
+
+  .response-actions {
+    margin-top: 1.35rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  button.copy {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.07em;
+    color: var(--blue-text);
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 0.34rem 1.05rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+
+  button.copy:hover { opacity: 0.86; }
+  button.copy:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  .copy-status { font-size: 0.95rem; color: var(--ink-2); }
+
+  /* ---------- maintained by ---------- */
+
+  ul.people { list-style: none; margin: 0; padding: 0; }
+  ul.people li { margin-bottom: 1.15rem; }
+
+  .person-affil,
+  .person-mail {
+    display: block;
+    color: var(--ink-2);
+    line-height: 1.4;
+  }
+
+  a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { text-decoration: none; }
+
+  @media (max-width: 620px) {
+    body { font-size: 18px; }
+    .wrap { padding: 2.25rem 1.25rem 3.5rem; }
+    .response { padding: 1.25rem 1.25rem 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="masthead">
+    <h1>Reviewer Commitment to Authorial Accountability</h1>
+    <p class="standfirst">A statement for reviewers who wish to direct their scarce judgment toward papers with less ambiguity about author engagement.</p>
+  </div>
+
+  <div class="statement">
+    <p class="opening">In many fields, the scientific paper is the most persistent representation of a research contribution, and the primary interface to the findings for other scientists. In light of its importance to the scientific record, peer reviewers volunteer their expert judgment. Traditionally, a peer reviewer could assume the work they were reviewing reflected authorial judgment: that the claims and arguments presented in a submitted paper have been deliberately selected by the authors, and that the authors are prepared to defend them.</p>
+
+    <p>Now that generative AI is able to assist researchers throughout the pipeline, from ideation to communication, the terms of peer review change. A reviewer of a paper composed of heavily AI-generated prose is asked to contribute their judgment, but has less basis for assuming that the claims they are evaluating reflect the authors’ judgment. It is up to each reviewer individually to decide if they are willing to contribute their time under these terms.</p>
+
+    <p>As submission numbers surge at many venues due to AI-enhanced production, expert human judgment is in greater demand than ever. How we allocate this resource shapes downstream incentives for authors, in turn affecting the future of peer review. When a commodity is scarce, it is rational to be selective about how it is allocated.</p>
+
+    <p class="pull">We choose to decline to volunteer our judgment as peer reviewers when the representation of a paper we are provided with strongly suggests AI-generated prose.</p>
+
+    <p>We make this choice without claiming that evidence of AI writing is a perfect signal of how a text was produced or the authors’ involvement. Our commitment is not a statement about detection accuracy at all. We believe that reviewers should be informed about the limitations of whatever process they use to judge provenance, but make no specific recommendations about methods and evidentiary standards. Instead, our emphasis is on the fact that as reviewers, we make individual decisions about where to direct our voluntary labor under uncertainty. As such, we are entitled to reserve our judgment for conditions where there is less ambiguity about author engagement. We make this choice to communicate our desire for high standards on authorial accountability for papers that are sent out for review, and to underscore the importance of ensuring that the scientific record reflects accountable human judgment.</p>
+
+    <p>This choice is not a statement against generative AI writ large, an insinuation that generative AI has no role to play in scientific writing, nor a suggestion that evidence of AI text alone be used to accept or reject manuscripts. It should not be read as condoning reviewers who violate reviewer agreements they have entered into by submitting confidential manuscripts to third-party detection services.</p>
+  </div>
+
+  <section class="set-apart">
+    <h2>Suggested response</h2>
+    <p class="lede">For reviewers who wish to decline an invitation under this commitment.</p>
+    <div class="response">
+      <blockquote id="suggested-response">
+        <p>Thank you for the invitation. I am declining under the <a href="./">Reviewer Commitment to Authorial Accountability</a> based on signals that the work may be substantially AI-generated.</p>
+      </blockquote>
+      <div class="response-actions">
+        <button class="copy" type="button" id="copy-btn">Copy text</button>
+        <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Maintained by</h2>
+    <ul class="people">
+      <li>
+        <span class="person-name">Jessica Hullman</span>
+        <span class="person-affil">Northwestern University</span>
+        <a class="person-mail" href="mailto:jhullman@northwestern.edu">jhullman@northwestern.edu</a>
+      </li>
+      <li>
+        <span class="person-name">Auyon Siddiq</span>
+        <span class="person-affil">UCLA Anderson School of Management</span>
+        <a class="person-mail" href="mailto:auyon.siddiq@anderson.ucla.edu">auyon.siddiq@anderson.ucla.edu</a>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy-btn');
+    var status = document.getElementById('copy-status');
+    var source = document.getElementById('suggested-response');
+
+    btn.addEventListener('click', function () {
+      var text = source.innerText.trim().replace(/\s+/g, ' ');
+      var done = function (msg) {
+        status.textContent = msg;
+        setTimeout(function () { status.textContent = ''; }, 2500);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { done('Copied.'); },
+          function () { done('Copy failed — select the text above.'); }
+        );
+      } else {
+        done('Copy unavailable — select the text above.');
+      }
+    });
+  })();
+</script>
+</body>
+</html>
