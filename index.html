@@ -178,6 +178,47 @@
 
   .copy-status { font-size: 0.95rem; color: var(--ink-2); }
 
+  /* ---------- endorsements ---------- */
+
+  a.btn {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+    color: var(--blue-text);
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 0.34rem 1.05rem;
+    transition: opacity 0.15s ease;
+  }
+
+  a.btn:hover { opacity: 0.86; }
+  a.btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  ul.endorsers {
+    list-style: none;
+    margin: 2.1rem 0 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+
+  ul.endorsers li {
+    break-inside: avoid;
+    margin: 0 0 0.9rem;
+  }
+
+  .endorser-name { display: block; line-height: 1.35; }
+
+  .endorser-affil {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: var(--ink-2);
+  }
+
   /* ---------- maintained by ---------- */
 
   ul.people { list-style: none; margin: 0; padding: 0; }
@@ -199,6 +240,7 @@
     body { font-size: 18px; }
     .wrap { padding: 2.25rem 1.25rem 3.5rem; }
     .response { padding: 1.25rem 1.25rem 1.1rem; }
+    ul.endorsers { columns: 1; }
   }
 </style>
 </head>
@@ -219,7 +261,7 @@
 
     <p class="pull">We choose to decline to volunteer our judgment as peer reviewers when the representation of a paper we are provided with strongly suggests AI-generated prose.</p>
 
-    <p>We make this choice without claiming that evidence of AI writing is a perfect signal of authors’ involvement. Our commitment is not a statement about detection accuracy at all. We believe that reviewers should be informed about the limitations of whatever process they use to judge provenance, but make no specific recommendations about methods and evidentiary standards.</p>
+    <p>We make this choice without claiming that evidence of AI writing is a perfect signal of authors’ involvement. Our commitment is not a statement about detection accuracy. We believe that reviewers should be informed about the limitations of whatever process they use to judge provenance, but make no specific recommendations about methods and evidentiary standards.</p>
 
     <p>Instead, our emphasis is on the fact that as reviewers, we make individual decisions about where to direct our voluntary labor under uncertainty. As such, we are entitled to reserve our judgment for conditions where there is less ambiguity about author engagement. We make this choice to communicate our desire for high standards on authorial accountability for papers that are sent out for review, and to underscore the importance of ensuring that the scientific record reflects accountable human judgment.</p>
 
@@ -238,6 +280,18 @@
         <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
       </div>
     </div>
+  </section>
+
+  <section id="endorsements">
+    <h2>Endorsements</h2>
+    <p class="lede" id="endorse-lede">Reviewers who have joined this commitment.</p>
+    <p><a class="btn" id="endorse-btn" href="ENDORSEMENT_FORM_URL">Add your name</a></p>
+
+    <!-- To add an endorser, copy one <li> block and fill it in. Keep them in
+         alphabetical order by surname. Nothing else needs changing: the count
+         and the empty-state text update themselves. -->
+    <ul class="endorsers" id="endorser-list">
+    </ul>
   </section>
 
   <section>
@@ -261,6 +315,21 @@
 </main>
 
 <script>
+  (function () {
+    var list = document.getElementById('endorser-list');
+    var lede = document.getElementById('endorse-lede');
+    var n = list.getElementsByTagName('li').length;
+
+    if (n === 0) {
+      list.hidden = true;
+      lede.textContent = 'Be among the first to join this commitment.';
+    } else {
+      lede.textContent = n === 1
+        ? 'One reviewer has joined this commitment.'
+        : n + ' reviewers have joined this commitment.';
+    }
+  })();
+
   (function () {
     var btn = document.getElementById('copy-btn');
     var status = document.getElementById('copy-status');
