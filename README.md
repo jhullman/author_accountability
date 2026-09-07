@@ -32,6 +32,18 @@ Nothing else needs changing. While the list is empty it stays hidden and the
 line above it explains that endorsers will be listed there; once entries exist
 that line becomes a count.
 
+## Before pushing
+
+Update the date in the `<p class="updated">` line at the bottom of `index.html`,
+in both places:
+
+```html
+<p class="updated">Last updated <time datetime="2026-09-07">September 7, 2026</time></p>
+```
+
+The `datetime` attribute is the machine-readable form and should match the
+visible date.
+
 Line length is controlled by one variable, `--measure` (currently `41rem`) near the top
 of the `<style>` block. Raise or lower it to widen or narrow the text column.
 
