@@ -19,6 +19,19 @@ and point the DNS at GitHub Pages.
 Everything — text, styles, and the copy-to-clipboard script — lives in `index.html`.
 Open it in a browser to preview locally.
 
+## Adding an endorser
+
+Paste one line into the `<ul id="endorser-list">` block in `index.html`, keeping
+the list alphabetical by surname:
+
+```html
+<li><span class="endorser-name">Jane Smith</span><span class="endorser-affil">Stanford University</span></li>
+```
+
+Nothing else needs changing. While the list is empty it stays hidden and the
+line above it explains that endorsers will be listed there; once entries exist
+that line becomes a count.
+
 Line length is controlled by one variable, `--measure` (currently `41rem`) near the top
 of the `<style>` block. Raise or lower it to widen or narrow the text column.
 
