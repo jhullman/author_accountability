@@ -254,6 +254,8 @@
 
     <p>Instead, our emphasis is on the fact that as reviewers, we make individual decisions about where to direct our voluntary labor under uncertainty. As such, we are entitled to reserve our judgment for conditions where there is less ambiguity about author engagement. We make this choice to communicate our desire for high standards on authorial accountability for papers that are sent out for review, and to underscore the importance of ensuring that the scientific record reflects accountable human judgment.</p>
 
+    <p>Ultimately, while a majority of prose that is authored by AI may help predict low author engagement today, a longer-term solution should avoid requiring reviewers to make such inferences. The aim of this statement is to create incentives for publishing venues to innovate by developing mechanisms that provide stronger assurance of authorial accountability before manuscripts are sent out for review.</p>
+
     <p class="footnote">This choice should not be read as a statement against generative AI writ large, an insinuation that generative AI has no role to play in scientific writing, nor a suggestion that evidence of AI text alone be used to accept or reject manuscripts. Nor should it be read as condoning reviewers who violate reviewer agreements they have entered into by submitting confidential manuscripts to third-party detection services.</p>
   </div>
 
@@ -325,7 +327,10 @@
     var source = document.getElementById('suggested-response');
 
     btn.addEventListener('click', function () {
-      var text = source.innerText.trim().replace(/\s+/g, ' ');
+      var canonical = document.querySelector('link[rel="canonical"]');
+      var url = canonical ? canonical.href : location.href;
+      var text = source.innerText.trim().replace(/\s+/g, ' ').replace(/\.$/, '') +
+                 ' (' + url + ').';
       var done = function (msg) {
         status.textContent = msg;
         setTimeout(function () { status.textContent = ''; }, 2500);
