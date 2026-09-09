@@ -184,30 +184,6 @@
     color: var(--ink-2);
   }
 
-  /* ---------- endorsements ---------- */
-
-  ul.endorsers {
-    list-style: none;
-    margin: 1.6rem 0 0;
-    padding: 0;
-    columns: 2;
-    column-gap: 2.5rem;
-  }
-
-  ul.endorsers li {
-    break-inside: avoid;
-    margin: 0 0 0.9rem;
-  }
-
-  .endorser-name { display: block; line-height: 1.35; }
-
-  .endorser-affil {
-    display: block;
-    font-size: 0.9rem;
-    line-height: 1.35;
-    color: var(--ink-2);
-  }
-
   /* ---------- maintained by ---------- */
 
   ul.people { list-style: none; margin: 0; padding: 0; }
@@ -229,7 +205,6 @@
     body { font-size: 18px; }
     .wrap { padding: 2.25rem 1.25rem 3.5rem; }
     .response { padding: 1.25rem 1.25rem 1.1rem; }
-    ul.endorsers { columns: 1; }
   }
 </style>
 </head>
@@ -291,36 +266,11 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Endorsements</h2>
-    <p class="lede" id="endorse-lede">Reviewers who have joined this commitment, listed by name and institution.</p>
-
-    <!-- To add an endorser, copy one <li> and fill it in, keeping the list
-         alphabetical by surname. The lede above updates itself. -->
-    <ul class="endorsers" id="endorser-list">
-    </ul>
-  </section>
-
-  <p class="updated">Last updated <time datetime="2026-09-08">September 8, 2026</time></p>
+  <p class="updated">Last updated <time datetime="2026-09-09">September 9, 2026</time></p>
 
 </main>
 
 <script>
-  (function () {
-    var list = document.getElementById('endorser-list');
-    var lede = document.getElementById('endorse-lede');
-    var n = list.getElementsByTagName('li').length;
-
-    if (n === 0) {
-      list.hidden = true;
-      lede.textContent =
-        'Reviewers who join this commitment will be listed here, by name and institution.';
-    } else {
-      lede.textContent = (n === 1 ? 'One reviewer has' : n + ' reviewers have') +
-        ' joined this commitment.';
-    }
-  })();
-
   (function () {
     var btn = document.getElementById('copy-btn');
     var status = document.getElementById('copy-status');
